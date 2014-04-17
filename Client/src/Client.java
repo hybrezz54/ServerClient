@@ -13,7 +13,6 @@ public class Client implements Runnable {
 	private BufferedReader in;
 	private PrintWriter out;
 	private Socket socket;
-	private KeyPairGenerator keyGen;
 
 	public Client(String hostName, int port) {
 		this.hostName = hostName;
