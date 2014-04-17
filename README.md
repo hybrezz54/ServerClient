@@ -1,4 +1,4 @@
 ServerClient
 ============
 
-A simple server and client
+A simple server and client created for educational purposes.
