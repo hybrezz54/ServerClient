@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <SplitPane dividerPositions="0.35451505016722407" prefHeight="160.0" prefWidth="218.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <TextField alignment="CENTER_RIGHT" layoutX="39.0" layoutY="57.0" prefHeight="25.0" prefWidth="132.0" promptText="Server IP" />
+                  <TextField layoutX="39.0" layoutY="91.0" prefHeight="25.0" prefWidth="132.0" promptText="Port #" />
+                  <Button layoutX="50.0" layoutY="199.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="111.0" text="Connect" />
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="298.0" prefWidth="235.0">
+               <children>
+                  <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="298.0" prefWidth="196.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <items>
+                        <TextArea editable="false" prefHeight="200.0" prefWidth="200.0">
+                           <effect>
+                              <ColorAdjust brightness="-0.65" />
+                           </effect>
+                        </TextArea>
+                        <TextField prefHeight="49.0" prefWidth="194.0" />
+                    </items>
+                  </SplitPane>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
