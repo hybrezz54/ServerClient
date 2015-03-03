@@ -7,25 +7,25 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hz.hybrezz.volatyle.client.model.SecondaryController">
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hz.hybrezz.volatyle.server.model.SecondaryController">
    <children>
       <SplitPane dividerPositions="0.28" prefHeight="160.0" prefWidth="218.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
             <AnchorPane prefHeight="200.0" prefWidth="200.0">
                <children>
-                  <TextField fx:id="txtHost" alignment="CENTER_RIGHT" layoutX="39.0" layoutY="57.0" prefHeight="25.0" prefWidth="132.0" promptText="Server IP" />
+                  <TextField fx:id="txtHost" alignment="CENTER_RIGHT" editable="false" layoutX="39.0" layoutY="57.0" prefHeight="25.0" prefWidth="132.0" text="localhost" />
                   <TextField fx:id="txtPort" layoutX="39.0" layoutY="91.0" prefHeight="25.0" prefWidth="132.0" promptText="Port #" />
-                  <Button fx:id="btnConnect" layoutX="50.0" layoutY="199.0" mnemonicParsing="false" onAction="#handleConnectButtonAction" prefHeight="25.0" prefWidth="111.0" text="Connect" />
+                  <Button fx:id="btnConnect" layoutX="50.0" layoutY="199.0" mnemonicParsing="false" onAction="#handleServerButtonAction" prefHeight="25.0" prefWidth="111.0" text="Start" />
                </children>
             </AnchorPane>
             <AnchorPane prefHeight="298.0" prefWidth="235.0">
                <children>
                   <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="298.0" prefWidth="196.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <items>
-                        <TextArea id="txtServer" fx:id="txtServer" editable="false" prefHeight="200.0" prefWidth="200.0" stylesheets="@default.css" text="Welcome to Volatyle Client!">
-                           <effect>
-                              <ColorAdjust brightness="0.35" />
-                           </effect>
+                        <TextArea id="txtClient" fx:id="txtClient" editable="false" prefHeight="200.0" prefWidth="200.0" stylesheets="@default.css" text="Welcome to Volatyle Server!">
+                        	<effect>
+                        		<ColorAdjust brightness="0.35" />
+                        	</effect>
                         </TextArea>
                         <TextField fx:id="txtUser" prefHeight="49.0" prefWidth="194.0" />
                     </items>

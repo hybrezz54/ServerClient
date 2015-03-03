@@ -1,6 +1,6 @@
-package hz.hybrezz.volatyle.client;
+package hz.hybrezz.volatyle.server;
 
-import hz.hybrezz.volatyle.client.model.SecondaryController;
+import hz.hybrezz.volatyle.server.model.SecondaryController;
 
 import java.io.IOException;
 
@@ -15,23 +15,13 @@ public class Main extends Application {
 
 	private Stage primaryStage;
 	private BorderPane rootLayout;
-	
 	private SecondaryController secondaryController;
-	private Client mClient;
-	
-	public Main() {
-		super();
-	}
-	
-	public Main(String host, int port) {
-		mClient = new Client(host, port, this);
-	}
 
 	@Override
 	public void start(Stage primaryStage) {
 		
 		this.primaryStage = primaryStage;
-		this.primaryStage.setTitle("Volatyle Client");
+		this.primaryStage.setTitle("Volatyle Server");
 		
 		initRootLayout();
 		initSecondaryLayout();
@@ -58,7 +48,7 @@ public class Main extends Application {
 		
 		try {
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(Main.class.getResource("view/ConnectLayout.fxml"));
+			loader.setLocation(Main.class.getResource("view/ServerLayout.fxml"));
 			AnchorPane pane = (AnchorPane) loader.load();
 			secondaryController = (SecondaryController) loader.getController();
 			pane.setPrefSize(rootLayout.getPrefWidth(), rootLayout.getPrefHeight());
@@ -69,35 +59,12 @@ public class Main extends Application {
 		
 	}
 	
-	public static void startClient(String host, int port) {
-		new Main(host, port);
-	}
-	
-	public static void clientAction(String text) {
-		System.out.println(text);
-	}
-	
-	public void log(String text) {
-		secondaryController.getTxtServer().appendText(text);
+	private void startServer() {
+		
 	}
 
 	public static void main(String[] args) {
-		switch (args.length) {
-		case 0:
-			launch(args);
-			break;
-		case 1:
-			new Client("localhost", Integer.parseInt(args[0]), null).init();
-			break;
-		case 2:
-			new Client(args[0], Integer.parseInt(args[1]), null).init();
-			break;
-		default:
-			System.out.println("Usage: java Client");
-			System.out.println("Usage: java Client <port>");
-			System.out.println("Usage: java Client <host> <port>");
-			break;
-		}
+		launch(args);
 	}
 
 }
